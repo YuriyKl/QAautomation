@@ -2,6 +2,7 @@
 
 sstring = "aab qq c badcc a qqqqqaqqqqaa tpara"
 
-
-s=[j.title() for j in sstring if j.count("a")==2]
+newstr = sstring.split()
+print(newstr)
+s=[j.title() for j in newstr if j.count("a")==2]
 print(s)
