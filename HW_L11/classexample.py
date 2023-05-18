@@ -1,4 +1,4 @@
-# #!/usr/bin/python3
+ #!/usr/bin/python3
 # class Dog:
 #     # This is a static variable
 #     num_of_dogs = 0
