@@ -9,4 +9,9 @@ users = [
 'age': 19}
 ]
 
-print([dic['name'] for dic in users for key in dic if dic["age"]>=18], sep="\n")
+for user in users:
+    if user["age"] >= 18:
+        print([user["name"]])
+
+#Solution #2
+print(*[user['name'] for user in users if user["age"]>=18], sep="\n")

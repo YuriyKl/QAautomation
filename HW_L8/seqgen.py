@@ -1,7 +1,21 @@
 #!/usr/bin/python3
 def generator(n, m):
-    sq_gen = (i+1 for i in range(n))
-    pow_gen = (pow(i+1, x+1) for x in range(m-1) for i in range(n+1))
+    # sq_gen = (i+1 for i in range(n))
+    def sq_gen():
+        for i in range(n+1):
+            i += 1
+            yield i
+
+    # pow_gen = (pow(i+1, x+1) for x in range(m-1) for i in range(n+1))
+    def pow_gen():
+        for i in range(n+1):
+            for x in range(m-1):
+                yield pow(i+1,x+1)
+            yield n
+
+
+    q1 = sq_gen
+    q2 = pow_gen
 
     # def combine():
     #     sqgen = sq_gen()
@@ -26,13 +40,11 @@ def generator(n, m):
     # for i in combine():
     #     print(i) # same issue q1 = sq_gen()
     # TypeError: 'generator' object is not callable
-    q1 = sq_gen()
-    q2 = pow_gen()
 
     import itertools
     for i in itertools.chain(sq_gen(), pow_gen()):
         print(i)
-     # #Grrr it`s not working  as well
+
 
 
 generator(3,4)
